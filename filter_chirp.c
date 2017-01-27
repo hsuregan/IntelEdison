@@ -201,7 +201,7 @@ int main(int argc, char **argv)
 	 * y_filt_r = real component of filtered signal values
 	 * y_filt_i = imaginary component of filtered signal values
 	 */
-	fprintf(fp, "sample,x,y_orig_r,y_filt_i,y_filt_r,y_filt_i\n");
+	fprintf(fp, "sample,x,y_orig_r,y_orig_i,y_filt_r,y_filt_i\n");
 	for (i = 0; i < n; i++) {
 		fprintf(fp, "%d,%8.4f,%8.4f,%8.4f,%8.4f,%8.4f\n",
 				i,
