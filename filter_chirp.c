@@ -152,16 +152,16 @@ int main(int argc, char **argv)
 	/* displays the contents of "y_orig" */
 	// print_arr("y", y_orig, n);
 
+	/*
+	 * ONLY MODIFY THIS SECTION
+	 */
+	
 	/* 
 	 * reminder of definitions above
 	 * liquid_iirdes_filtertype f_type;
 	 * liquid_iirdes_bandtype b_high_pass, b_low_pass;
 	 * liquid_iirdes_format f_format;
 	 * iirfilt_cccf filter_high_pass, filter_low_pass;
-	 */
-
-	/*
-	 * ONLY MODIFY THIS SECTION
 	 */
 
 	/* starting to build the filters */
