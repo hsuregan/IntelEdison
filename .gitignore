@@ -1,4 +1,5 @@
 # Object files
+filter_chirp
 *.o
 *.ko
 *.obj
