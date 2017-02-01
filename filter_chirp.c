@@ -175,7 +175,7 @@ int main(int argc, char **argv)
 	f0    = 0.0f; 	/* Ignored for high pass and low pass */
 	Ap    = 40.0f; 	/* Pass band ripple (dB), ignored for Butterworth */
 	As    = 0.1f; 	/* Stop band ripple (dB), ignored for Butterworth */
-	order = 2; 	/* Filter order */
+	order = 3; 	/* Filter order */
 	fc    = Fc/Fs; 	/* Normalized cutoff frequency */
 
 	iirfilt_cccf iir_filter_object;
