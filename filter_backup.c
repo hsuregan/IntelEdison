@@ -165,27 +165,18 @@ int main(int argc, char **argv)
 	 */
 
 	/* starting to build the filters */
-	f_type 		= LIQUID_IIRDES_BUTTER;	/* filter type: Butterworth, etc */
-	b_high_pass 	= LIQUID_IIRDES_HIGHPASS;	/* High-pass filter */
-	b_low_pass 	= LIQUID_IIRDES_LOWPASS;	/* Low-pass filter */
-	f_format 	= LIQUID_IIRDES_SOS;	/* Second Order Section form */
-	Fs 		= 100.0f;	/* Sampling frequency (Hz) */
+	f_type 		= 0;	/* filter type: Butterworth, etc */
+	b_high_pass 	= 0;	/* High-pass filter */
+	b_low_pass 	= 0;	/* Low-pass filter */
+	f_format 	= 0;	/* Second Order Section form */
+	Fs 		= 1.0f;	/* Sampling frequency (Hz) */
 
-	Fc    = 0.5f; 	/* Cut off frequency (Hz) */
-	f0    = 0.0f; 	/* Ignored for high pass and low pass */
-	Ap    = 40.0f; 	/* Pass band ripple (dB), ignored for Butterworth */
-	As    = 0.1f; 	/* Stop band ripple (dB), ignored for Butterworth */
-	order = 5; 	/* Filter order */
+	Fc    = 1.0f; 	/* Cut off frequency (Hz) */
+	f0    = 1.0f; 	/* Ignored for high pass and low pass */
+	Ap    = 1.0f; 	/* Pass band ripple (dB), ignored for Butterworth */
+	As    = 1.0f; 	/* Stop band ripple (dB), ignored for Butterworth */
+	order = 1; 	/* Filter order */
 	fc    = Fc/Fs; 	/* Normalized cutoff frequency */
-
-	iirfilt_cccf iir_filter_object;
-	iir_filter_object = iirfilt_cccf_create_prototype(f_type, b_high_pass, f_format, order, fc, f0, Ap, As);
-
-	int j;
-	for(j = 0; j < 1024; j++) {
-		iirfilt_cccf_execute(iir_filter_object, y_orig[i], &y_filt[i]);	
-	}
-
 
 	/*
 	 * DO NOT MODIFY ANYTHING PAST THIS COMMENT
