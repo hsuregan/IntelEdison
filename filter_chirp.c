@@ -171,7 +171,7 @@ int main(int argc, char **argv)
 	f_format 	= LIQUID_IIRDES_SOS;	/* Second Order Section form */
 	Fs 		= 100.0f;	/* Sampling frequency (Hz) */
 
-	Fc    = 15.0f; 	/* Cut off frequency (Hz) */
+	Fc    = 20.0f; 	/* Cut off frequency (Hz) */
 	f0    = 0.0f; 	/* Ignored for high pass and low pass */
 	Ap    = 40.0f; 	/* Pass band ripple (dB), ignored for Butterworth */
 	As    = 0.1f; 	/* Stop band ripple (dB), ignored for Butterworth */
