@@ -171,7 +171,7 @@ int main(int argc, char **argv)
 	f_format 	= LIQUID_IIRDES_SOS;	/* Second Order Section form */
 	Fs 		= 100.0f;	/* Sampling frequency (Hz) */
 
-	Fc    = 0.5f; 	/* Cut off frequency (Hz) */
+	Fc    = 15.0f; 	/* Cut off frequency (Hz) */
 	f0    = 0.0f; 	/* Ignored for high pass and low pass */
 	Ap    = 40.0f; 	/* Pass band ripple (dB), ignored for Butterworth */
 	As    = 0.1f; 	/* Stop band ripple (dB), ignored for Butterworth */
@@ -185,7 +185,8 @@ int main(int argc, char **argv)
 	for(j = 0; j < 1024; j++) {
 		iirfilt_cccf_execute(iir_filter_object, y_orig[j], &y_filt[j]);	
 	}
-	Fc = 0.2f;
+	Fc = 0.5f;
+	fc = Fc/Fs;
 	iirfilt_cccf iir_filter_object2;
 iir_filter_object2 = iirfilt_cccf_create_prototype(f_type, b_high_pass, f_format, order, fc, f0, Ap, As);
 	for(j = 0; j < 1024; j++) {
