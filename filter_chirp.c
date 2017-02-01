@@ -185,6 +185,12 @@ int main(int argc, char **argv)
 	for(j = 0; j < 1024; j++) {
 		iirfilt_cccf_execute(iir_filter_object, y_orig[j], &y_filt[j]);	
 	}
+	Fc = 0.2f;
+	iirfilt_cccf iir_filter_object2;
+iir_filter_object2 = iirfilt_cccf_create_prototype(f_type, b_high_pass, f_format, order, fc, f0, Ap, As);
+	for(j = 0; j < 1024; j++) {
+		iirfilt_cccf_execute(iir_filter_object2, y_filt[j], &y_filt[j]);
+	}
 
 
 	/*
