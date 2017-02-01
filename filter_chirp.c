@@ -183,7 +183,7 @@ int main(int argc, char **argv)
 
 	int j;
 	for(j = 0; j < 1024; j++) {
-		iirfilt_cccf_execute(iir_filter_object, y_orig[i], &y_filt[i]);	
+		iirfilt_cccf_execute(iir_filter_object, y_orig[j], &y_filt[j]);	
 	}
 
 
