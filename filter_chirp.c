@@ -175,11 +175,11 @@ int main(int argc, char **argv)
 	f0    = 0.0f; 	/* Ignored for high pass and low pass */
 	Ap    = 40.0f; 	/* Pass band ripple (dB), ignored for Butterworth */
 	As    = 0.1f; 	/* Stop band ripple (dB), ignored for Butterworth */
-	order = 3; 	/* Filter order */
+	order = 5; 	/* Filter order */
 	fc    = Fc/Fs; 	/* Normalized cutoff frequency */
 
 	iirfilt_cccf iir_filter_object;
-	iir_filter_object = iirfilt_cccf_create_prototype(f_type, b_high_pass, f_format, order, fc, f0, Ap, As);
+	iir_filter_object = iirfilt_cccf_create_prototype(f_type, b_low_pass, f_format, order, fc, f0, Ap, As);
 
 	int j;
 	for(j = 0; j < 1024; j++) {
